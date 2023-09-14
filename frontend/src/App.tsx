@@ -7,8 +7,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Slider } from "./components/ui/slider";
 import { VideoInputForm } from "./components/video-input-form";
 import { PromptSelect } from "./components/prompt-select";
+import { useState } from "react";
 
 export function App() {
+  const [temperature, setTemperature] = useState(0.5)
+
   function handlePromptSelected(template: string) {
     console.log(template)
   }
@@ -79,6 +82,8 @@ export function App() {
                   min={0}
                   max={1}
                   step={0.1}
+                  value={[temperature]}
+                  onValueChange={value => setTemperature(value[0])}
                 />
                 <span className="block text-xs text-muted-foreground italic">
                   The higher the value, the more creative and more prone to error
