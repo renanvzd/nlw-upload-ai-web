@@ -1,4 +1,4 @@
-import { Github, FileVideo, Upload, Wand2 } from "lucide-react"
+import { Github, Wand2 } from "lucide-react"
 import { Button } from "./components/ui/button";
 import { Separator } from "./components/ui/separator";
 import { Textarea } from "./components/ui/textarea";
@@ -6,6 +6,7 @@ import { Label } from "./components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select";
 import { Slider } from "./components/ui/slider";
 import { VideoInputForm } from "./components/video-input-form";
+import { PromptSelect } from "./components/prompt-select";
 
 export function App() {
   return (
@@ -47,17 +48,9 @@ export function App() {
             <Separator />
 
             <form className="space-y-6">
-              <div className="space-y-2">
+              <div className="space-y-2 flex flex-col">
                 <Label>Prompt</Label>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a prompt..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="title">Title for YouTube</SelectItem>
-                    <SelectItem value="description">Description for YouTube</SelectItem>
-                  </SelectContent>
-                </Select>
+                <PromptSelect />
               </div>
 
               <div className="space-y-2">
