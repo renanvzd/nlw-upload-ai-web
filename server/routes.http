@@ -26,3 +26,16 @@ Content-Type: application/json
 {
   "prompt": "safety, silence, doctor"
 }
+
+###
+
+# @name generate-ai-completion
+
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+  "videoId": "2fcb00b0-d528-4641-9f74-740045bf3234",
+  "temperature": 0.5,
+  "template": "Generate a short brief of the transcription: '''{transcription}'''"
+}
